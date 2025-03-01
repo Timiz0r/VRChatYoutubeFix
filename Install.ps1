@@ -25,7 +25,7 @@ if (-not (Get-Command docker.exe)) {
     $env:path = "$env:path:$dockerPath"
 }
 
-docker run --name bgutil-provider -d --restart unless-stopped -p 4416:4416 brainicism/bgutil-ytdlp-pot-provider
+docker run --name bgutil-provider -d --restart unless-stopped -p 4416:4416 brainicism/bgutil-ytdlp-pot-provider | Out-Null
 
 $ytdlpLocation = "$env:userprofile\AppData\LocalLow\VRChat\VRChat\Tools"
 Set-Location $ytdlpLocation
